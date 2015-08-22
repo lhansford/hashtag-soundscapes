@@ -7,9 +7,9 @@ import pytz
 from authomatic.adapters import WerkzeugAdapter
 from authomatic import Authomatic
 
-from config import TIME_RANGE, CONFIG, SECRET_KEY
+from app.config import TIME_RANGE, CONFIG, SECRET_KEY
 from app import app, twitter
-from forms import SearchForm, AuthForm
+from app.forms import SearchForm, AuthForm
 
 authomatic = Authomatic(CONFIG, SECRET_KEY, report_errors=False)
 
@@ -63,7 +63,7 @@ def search(search):
 		tweets = [
 			t for t in response['content']['statuses'] if twitter_utils.get_date(t) >= t_range
 		]
-		print "Current rate-limiting status: " + str(query.get_metadata()['x-rate-limit-reset'])
+		print("Current rate-limiting status: " + str(query.get_metadata()['x-rate-limit-reset']))
 		return render_template("page.html", search = search,
 		 tweets = tweets, music_config = twitter_utils.get_music_config(tweets))
 	except TwitterSearchException as e:
