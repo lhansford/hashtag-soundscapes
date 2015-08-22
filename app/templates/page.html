@@ -1,0 +1,32 @@
+<html>
+	<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+    <div class="tweet-list">
+      <div class="stats">
+        <a href="/">Home</a>
+      <ul>
+        <li>Polarity: <span id='polarity'>{{ music_config.polarity }}</span></li>
+        <li>Subjectivity: <span id='subjectivity'>{{ music_config.subjectivity }}</span></li>
+        <li>Tweets: <span id='tweets'>{{ music_config.tweet_count }}</span></li>
+        <li>Retweets: <span id='retweets'>{{ music_config.retweet_count }}</li>
+        <li>Average length: <span id='avglength'>{{ music_config.average_length }}</span> characters</li>
+        <li>Tweet rate: <span id='tweetrate'>{{ music_config.tweet_rate }}</span> per minute</li>
+      </ul>
+    </div>
+    <button id="stop">Stop</button>
+      <h1>Search term: {{ search }}</h1>
+      <ul>
+  		{% for tweet in tweets %}
+        <li>
+          <p class="tweet-user">@{{ tweet.user.screen_name }}</p>
+    			<p class="tweet-text">{{ tweet.text }}</p>
+        </li>
+  		{% endfor %}
+    </ul>
+    </div>
+    <script type="text/javascript" src="../static/js/audio.js"></script>
+	</body>
+</html>

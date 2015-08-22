@@ -1,0 +1,63 @@
+body {
+	width: 100%;
+	background-color: black;
+	color: white;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.splash{
+	width: 60%;
+	/*min-height: 600px;*/
+	margin: 0 auto;
+	background-color: white;
+	color: black;
+	padding: 60px;
+}
+
+#search {
+	/*margin: 40px auto;*/
+	width: 80%;
+	font-size: 2em;
+	display: inline;
+}
+
+#submit {
+	/*margin: 40px auto;*/
+	width: 10%;
+	font-size: 2em;
+	display: inline;
+}
+
+.visualization {
+  position: absolute;
+  z-index: -1;
+}
+
+.stats {
+	float: left;
+}
+
+.tweet-list {
+	max-width: 20%;
+	overflow-y: scroll;
+	float:right;
+	max-height: 90%;
+	padding: 30px;
+	background-color: black;
+}
+
+.tweet-list ul {
+	padding: 0;
+}
+
+.tweet-list li {
+	border-bottom: white solid 1px;
+}
+
+.tweet-user {
+	font-variant:	small-caps;
+	font-size: 12px;
+}

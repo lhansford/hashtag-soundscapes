@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hashtag Soundscapes</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  </head>
+  <body>
+    <section class="splash">
+      <h1>Hashtag Soundscapes</h1>
+    	{% if logged_in %}
+      <p><strong>Searching may result in very loud noises and flashing visualisations.
+        I'd recommend turning your speakers down very low and not using this app if flashing images
+        will bother you.</strong></p>
+  		<form method="POST" action="/">
+  	    {{ form.hidden_tag() }}
+  	    {{ form.search(placeholder="Enter your search terms here") }}
+  	    <input id="submit" type="submit" value="Search">
+  		</form>
+      {% else %}
+      <p>Before you can search you need to login with <a href="login">Twitter</a>.</p>
+      {% endif %}
+    </section>
+	</body>
+</html>
